@@ -35,7 +35,7 @@ def get_boxes():
     """x should stay the same for 3 rounds and y should always change from 0 to 2"""
     box = []
 
-    yC = 0 # Counter for y
+    yC = 0
     poss = [(0, 3), (3, 6), (6, 9)]
     
     for c in range(9):
@@ -72,6 +72,7 @@ def get_box(x,y, box):
 
 # Function that takes row index as an input and changes the table
 def check_row(tableNum):
+    
     # Finding numbers missing in the first row
     notIn = []
     columns = get_columns()
@@ -97,11 +98,11 @@ def check_row(tableNum):
                         break
                 
             if possible == 1: # Solution!
-                table[tableNum][i] = number # Put number in table 
-                notIn.remove(number) # Remove number from notIn list
+                table[tableNum][i] = number
+                notIn.remove(number)
                 
-                columns = get_columns() # Update cloumns
-                box = get_boxes() # update Boxes 
+                columns = get_columns()
+                box = get_boxes()
 
 
 # Loop thoght the rows
